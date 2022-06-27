@@ -76,8 +76,11 @@ class DashboardScreen extends GetView<DashboardScreenController> {
                                       initialTimerDuration: const Duration(
                                           minutes: 10, seconds: 0),
                                       onTimerDurationChanged: (time) {
-                                        controller.minutes = time.inMinutes;
-                                        controller.seconds = time.inSeconds;
+                                        controller.minutes =
+                                            time.inMinutes.toInt();
+                                        controller.seconds =
+                                            // time.inSeconds.toInt();
+                                            (time.inSeconds % 60).toInt();
                                       },
                                     ),
                                   ),

@@ -20,9 +20,10 @@ class CustomListView extends GetView<DashboardScreenController> {
         itemBuilder: (BuildContext context, int index) {
           int passMints = (controller.asd[index]['minutes'] ?? 10).toInt();
           int passSec = (controller.asd[index]['seconds'] ?? 00).toInt();
+
           return TimmerListTile(
             listIndex: index,
-            minutes: passMints,
+            minutes: (passMints).toInt(),
             seconds: passSec,
           );
         });

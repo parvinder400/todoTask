@@ -11,10 +11,11 @@ class CustomGridView extends GetView<DashboardScreenController> {
         padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
         shrinkWrap: true,
         gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(
-            maxCrossAxisExtent: 200,
-            childAspectRatio: 3 / 2.2,
-            crossAxisSpacing: 20,
-            mainAxisSpacing: 20),
+          maxCrossAxisExtent: 200,
+          childAspectRatio: 3 / 2.2,
+          crossAxisSpacing: 20,
+          mainAxisSpacing: 20,
+        ),
         itemCount: controller.asd.length,
         itemBuilder: (BuildContext ctx, index) {
           return Container(
