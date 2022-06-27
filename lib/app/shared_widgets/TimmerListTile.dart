@@ -44,7 +44,9 @@ class _TimmerListTileState extends State<TimmerListTile>
     super.initState();
     controller = AnimationController(
       vsync: this,
-      duration: Duration(minutes: widget.minutes!, seconds: widget.seconds!),
+      duration: Duration(
+          minutes: (widget.minutes!).toInt(),
+          seconds: (widget.seconds!).toInt()),
     );
 
     controller.addListener(() {

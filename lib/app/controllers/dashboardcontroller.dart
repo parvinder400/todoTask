@@ -1,4 +1,3 @@
-import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:yockettask/data/local/local_storage.dart';
@@ -15,7 +14,7 @@ class DashboardScreenController extends GetxController {
   List<dynamic> oldList = [].obs;
   List<dynamic> completedList = [].obs;
   int counter = 600;
-  Timer? timer;
+
   var timeToShow = ''.obs;
   int selectedIndex = -1.obs;
 
@@ -28,14 +27,8 @@ class DashboardScreenController extends GetxController {
     // storage.remove('tasks');
     asd = storage.read('tasks') ?? [];
     completedList = storage.read('completedTask') ?? [];
-    // _startTimer();
-    super.onInit();
-  }
 
-  @override
-  void dispose() {
-    timer!.cancel();
-    super.dispose();
+    super.onInit();
   }
 
   addTask() {

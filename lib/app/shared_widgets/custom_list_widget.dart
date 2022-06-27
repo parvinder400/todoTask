@@ -14,22 +14,17 @@ class CustomListView extends GetView<DashboardScreenController> {
   @override
   Widget build(BuildContext context) {
     return ListView.builder(
+        padding: EdgeInsets.only(bottom: 100),
         shrinkWrap: true,
         itemCount: controller.asd.length,
         itemBuilder: (BuildContext context, int index) {
-          int passMints =
-              int.parse(controller.asd[index]['minutes'].toString());
-          int passSec = int.parse(controller.asd[index]['seconds'].toString());
-          return InkWell(
-              onTap: () {
-                controller.completedTask(fnindex: index);
-                controller.deleteTask(removeIndex: index);
-              },
-              child: TimmerListTile(
-                listIndex: index,
-                minutes: passMints,
-                seconds: passSec,
-              ));
+          int passMints = (controller.asd[index]['minutes'] ?? 10).toInt();
+          int passSec = (controller.asd[index]['seconds'] ?? 00).toInt();
+          return TimmerListTile(
+            listIndex: index,
+            minutes: passMints,
+            seconds: passSec,
+          );
         });
   }
 }
